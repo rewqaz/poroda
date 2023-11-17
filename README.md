@@ -1,5 +1,5 @@
 <p align="center">
-      <img src="[Project Logo](https://ibb.co/Wndz7MF)" width="726">
+      <img src="https://i.ibb.co/PZgwNQB/logoza-ru-1.png" alt="project logo" width="1200">
 </p>
 
 ## О программе
@@ -13,8 +13,8 @@
 
 ## Разработчики
 
-- [Полина Шапиро] (https://github.com/shapiropoly)
-- [Роман Иванин] (https://github.com/rewqaz)
-- [Давид Черных] (https://github.com/vega2475)
+- [Полина Шапиро](https://github.com/shapiropoly)
+- [Роман Иванин](https://github.com/rewqaz)
+- [Давид Черных](https://github.com/vega2475)
 
 ## Лицензия
