@@ -13,8 +13,9 @@
 
 ## Разработчики
 
+- [Давид Черных](https://github.com/vega2475)
 - [Полина Шапиро](https://github.com/shapiropoly)
 - [Роман Иванин](https://github.com/rewqaz)
-- [Давид Черных](https://github.com/vega2475)
+
 
 ## Лицензия
