@@ -1,14 +1,16 @@
 package com.render.objreader;
 
-
-
 import com.render.math.Vector2f;
 import com.render.math.Vector3f;
 import com.render.model.Model;
-import com.render.model.Polygon;
+import com.render.model.model_components.Normal;
+import com.render.model.model_components.Polygon;
+import com.render.model.model_components.TextureVertex;
+import com.render.model.model_components.Vertex;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class ObjReader {
@@ -19,7 +21,11 @@ public class ObjReader {
 	private static final String OBJ_FACE_TOKEN = "f";
 
 	public static Model read(String fileContent) {
-		Model result = new Model();
+		List<Vertex> vertexList = new ArrayList<>();
+		List<TextureVertex> textureVertexList = new ArrayList<>();
+		List<Normal> normalList = new ArrayList<>();
+		List<Polygon> polygonList = new ArrayList<>();
+		Model result = new Model(vertexList, textureVertexList, normalList, polygonList);
 
 		int lineInd = 0;
 		Scanner scanner = new Scanner(fileContent);
@@ -45,11 +51,23 @@ public class ObjReader {
 				// А еще это портит читаемость
 				// И не стоит забывать про тесты. Чем проще вам задать данные для теста, проверить, что метод рабочий,
 				// тем лучше.
-				case OBJ_VERTEX_TOKEN -> result.vertices.add(parseVertex(wordsInLine, lineInd));
-				case OBJ_TEXTURE_TOKEN -> result.textureVertices.add(parseTextureVertex(wordsInLine, lineInd));
-				case OBJ_NORMAL_TOKEN -> result.normals.add(parseNormal(wordsInLine, lineInd));
-				case OBJ_FACE_TOKEN -> result.polygons.add(parseFace(wordsInLine, lineInd));
-				default -> {}
+				case OBJ_VERTEX_TOKEN:
+					result.getVertices().add(parseVertex(wordsInLine, lineInd));
+					result.setVertices(result.getVertices()); // it can be deleted
+					break;
+				case OBJ_TEXTURE_TOKEN:
+					result.getTextureVertices().add(parseTextureVertex(wordsInLine, lineInd));
+					result.setTextureVertices(result.getTextureVertices()); // it can be deleted
+					break;
+				case OBJ_NORMAL_TOKEN:
+					result.getNormals().add(parseNormal(wordsInLine, lineInd));
+					result.setNormals(result.getNormals()); // it can be deleted
+					break;
+				case OBJ_FACE_TOKEN:
+					result.getPolygons().add(parseFace(wordsInLine, lineInd));
+					result.setPolygons(result.getPolygons()); // it can be deleted
+					break;
+				default : {}
 			}
 		}
 
@@ -57,12 +75,13 @@ public class ObjReader {
 	}
 
 	// Всем методам кроме основного я поставил модификатор доступа protected, чтобы обращаться к ним в тестах
-	protected static Vector3f parseVertex(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
+	protected static Vertex parseVertex(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
 		try {
-			return new Vector3f(
+			return new Vertex(new Vector3f(
 					Float.parseFloat(wordsInLineWithoutToken.get(0)),
 					Float.parseFloat(wordsInLineWithoutToken.get(1)),
-					Float.parseFloat(wordsInLineWithoutToken.get(2)));
+					Float.parseFloat(wordsInLineWithoutToken.get(2)))
+			);
 
 		} catch(NumberFormatException e) {
 			throw new ObjReaderException("Failed to parse float value.", lineInd);
@@ -72,11 +91,12 @@ public class ObjReader {
 		}
 	}
 
-	protected static Vector2f parseTextureVertex(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
+	protected static TextureVertex parseTextureVertex(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
 		try {
-			return new Vector2f(
+			return new TextureVertex(new Vector2f(
 					Float.parseFloat(wordsInLineWithoutToken.get(0)),
-					Float.parseFloat(wordsInLineWithoutToken.get(1)));
+					Float.parseFloat(wordsInLineWithoutToken.get(1)))
+			);
 
 		} catch(NumberFormatException e) {
 			throw new ObjReaderException("Failed to parse float value.", lineInd);
@@ -86,12 +106,13 @@ public class ObjReader {
 		}
 	}
 
-	protected static Vector3f parseNormal(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
+	protected static Normal parseNormal(final ArrayList<String> wordsInLineWithoutToken, int lineInd) {
 		try {
-			return new Vector3f(
+			return new Normal(new Vector3f(
 					Float.parseFloat(wordsInLineWithoutToken.get(0)),
 					Float.parseFloat(wordsInLineWithoutToken.get(1)),
-					Float.parseFloat(wordsInLineWithoutToken.get(2)));
+					Float.parseFloat(wordsInLineWithoutToken.get(2)))
+			);
 
 		} catch(NumberFormatException e) {
 			throw new ObjReaderException("Failed to parse float value.", lineInd);
