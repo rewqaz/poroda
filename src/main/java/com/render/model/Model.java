@@ -1,8 +1,8 @@
 package com.render.model;
-import com.render.model.model_components.Normal;
-import com.render.model.model_components.Polygon;
-import com.render.model.model_components.TextureVertex;
-import com.render.model.model_components.Vertex;
+import com.render.model.model3D_components.Normal;
+import com.render.model.model3D_components.Polygon;
+import com.render.model.model3D_components.TextureVertex;
+import com.render.model.model3D_components.Vertex;
 
 import java.util.*;
 

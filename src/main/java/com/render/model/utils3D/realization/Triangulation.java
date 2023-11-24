@@ -1,12 +1,12 @@
-package com.render.model.utils;
+package com.render.model.utils3D.realization;
 
 import com.render.model.Model;
-import com.render.model.model_components.Polygon;
+import com.render.model.model3D_components.Polygon;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ModelUtils {
+public class Triangulation {
     public static void triangulate(Model model) {
         // Создаем новый список треугольников
         List<Polygon> triangulatedFaces = new ArrayList<>();
