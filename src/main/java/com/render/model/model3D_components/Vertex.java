@@ -1,4 +1,4 @@
-package com.render.model.model_components;
+package com.render.model.model3D_components;
 
 import com.render.math.Vector3f;
 

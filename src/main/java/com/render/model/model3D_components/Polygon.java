@@ -1,4 +1,4 @@
-package com.render.model.model_components;
+package com.render.model.model3D_components;
 
 import java.util.ArrayList;
 import java.util.List;
