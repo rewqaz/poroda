@@ -2,8 +2,11 @@ package com.render.render_engine;
 
 import java.util.ArrayList;
 
+
 import com.render.model.model3D_components.Vertex;
 import com.render.model.utils3D.ModelUtils3D;
+import com.render.math.vector.Vector3f;
+
 import javafx.scene.canvas.GraphicsContext;
 import javax.vecmath.*;
 import com.render.model.Model;

@@ -1,6 +1,6 @@
 package com.render.model.model3D_components;
 
-import com.render.math.Vector3f;
+import com.render.math.vector.Vector3f;
 
 public class Normal {
     private Vector3f coordinates;

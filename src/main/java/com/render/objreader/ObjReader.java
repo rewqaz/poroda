@@ -1,7 +1,11 @@
 package com.render.objreader;
 
-import com.render.math.Vector2f;
-import com.render.math.Vector3f;
+
+
+
+import com.render.math.vector.Vector2f;
+import com.render.math.vector.Vector3f;
+
 import com.render.model.Model;
 import com.render.model.model3D_components.Normal;
 import com.render.model.model3D_components.Polygon;
