@@ -1,7 +1,5 @@
 package com.render.model.model3D_components;
-
-import com.render.math.Vector2f;
-
+import com.render.math.vector.Vector2f;
 public class TextureVertex {
     private Vector2f coordinates;
 

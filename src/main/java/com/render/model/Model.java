@@ -1,8 +1,12 @@
 package com.render.model;
+
 import com.render.model.model3D_components.Normal;
 import com.render.model.model3D_components.Polygon;
 import com.render.model.model3D_components.TextureVertex;
 import com.render.model.model3D_components.Vertex;
+import com.render.math.vector.Vector2f;
+import com.render.math.vector.Vector3f;
+
 
 import java.util.*;
 
@@ -58,4 +62,10 @@ public class Model {
     public void setPolygons(List<Polygon> polygons) {
         this.polygons = polygons;
     }
+
+    public ArrayList<Vector3f> vertices = new ArrayList<Vector3f>();
+    public ArrayList<Vector2f> textureVertices = new ArrayList<Vector2f>();
+    public ArrayList<Vector3f> normals = new ArrayList<Vector3f>();
+    public ArrayList<Polygon> polygons = new ArrayList<Polygon>();
+
 }
