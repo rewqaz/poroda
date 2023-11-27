@@ -1,7 +1,6 @@
 package com.render.objreader;
 
-<<<<<<< Updated upstream
-=======
+
 
 
 import com.render.math.vector.Vector2f;
