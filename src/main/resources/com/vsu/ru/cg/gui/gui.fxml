@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  Copyright (c) 2015, 2019, Gluon and/or its affiliates.
+  All rights reserved. Use is subject to license terms.
+
+  This file is available and licensed under the following license:
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions
+  are met:
+
+  - Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer.
+  - Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the distribution.
+  - Neither the name of Oracle Corporation nor the names of its
+    contributors may be used to endorse or promote products derived
+    from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.vsu.ru.cg.gui.GuiController">
+    <center>
+        <SplitPane dividerPositions="0.6787948290241869" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <items>
+                <AnchorPane fx:id="anchorPaneCanvas" minHeight="0.0" minWidth="0.0" prefHeight="373.0" prefWidth="391.0">
+                    <children>
+                        <Canvas fx:id="canvas" height="2200.0" width="2596.0" />
+                    </children>
+                </AnchorPane>
+                <SplitPane dividerPositions="0.4716801523084246" orientation="VERTICAL" prefHeight="986.0" prefWidth="622.0">
+                    <items>
+                        <ScrollPane fx:id="topScrollPane" prefHeight="522.0" prefWidth="752.0">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                            </content>
+                        </ScrollPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TabPane prefHeight="552.0" prefWidth="752.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Трансформация">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                                <ScrollPane fx:id="bottomScrollPane" prefHeight="544.0" prefWidth="738.0">
+                                             <content>
+                                                <GridPane prefHeight="496.0" prefWidth="570.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="176.5013427734375" minWidth="10.0" prefWidth="154.0" />
+                                                    <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="122.5408935546875" minWidth="10.0" prefWidth="43.5" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="247.587158203125" minWidth="10.0" prefWidth="153.5" />
+                                                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="217.0" minWidth="10.0" prefWidth="217.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                      <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="69.0" minHeight="8.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="26.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="102.0" minHeight="10.0" prefHeight="15.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="119.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="125.0" minHeight="10.0" prefHeight="28.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="128.0" minHeight="10.0" prefHeight="13.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="147.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="150.0" minHeight="10.0" prefHeight="33.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="145.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints maxHeight="144.0" minHeight="10.0" prefHeight="144.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label text="Трансформация">
+                                                         <font>
+                                                            <Font size="16.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Положение:" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Масштаб:" GridPane.rowIndex="6">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Вращение:" GridPane.rowIndex="10">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="X" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Y" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Z" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Slider fx:id="moveX" max="50" min="-50" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                      <Slider fx:id="moveY" max="50" min="-50" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                      <Slider fx:id="moveZ" max="50" min="-50" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                                                      <Slider fx:id="scaleX" max="2" min="0" value="1" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                                                      <Slider fx:id="scaleY" max="2" min="0" value="1" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                                                      <Slider fx:id="scaleZ" max="2" min="0" value="1" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                                                      <Slider fx:id="rotateX" max="360" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                                                      <Slider fx:id="rotateY" max="360" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                                                      <Slider fx:id="rotateZ" max="360" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                                                      <Label text="X" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Y" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Z" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="X" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Y" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <Label text="Z" GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                                         <font>
+                                                            <Font size="14.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </GridPane>
+                                             </content>
+                                                </ScrollPane>
+                                       </children>
+                                    </AnchorPane>
+                              </content>
+                            </Tab>
+                            <Tab text="Камера">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ScrollPane prefHeight="523.0" prefWidth="757.0">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="527.0" prefWidth="766.0">
+                                                   <children>
+                                                      <GridPane alignment="CENTER" layoutX="3.0" layoutY="-1.0" prefHeight="250.0" prefWidth="322.0">
+                                                        <columnConstraints>
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.0" minWidth="10.0" prefWidth="90.490234375" />
+                                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.0" minWidth="5.0" prefWidth="34.009765625" />
+                                                            <ColumnConstraints maxWidth="368.5" minWidth="167.5" prefWidth="197.92626953125" />
+                                                        </columnConstraints>
+                                                        <rowConstraints>
+                                                          <RowConstraints maxHeight="76.0" minHeight="10.0" prefHeight="41.49261474609375" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="80.5" minHeight="10.0" prefHeight="33.47784423828125" vgrow="SOMETIMES" />
+                                                          <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="33.463134765625" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="107.0" minHeight="10.0" prefHeight="33.50982666015625" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="107.0" minHeight="1.0245361328125" prefHeight="13.0123291015625" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="126.0" minHeight="10.0" prefHeight="34.0172119140625" vgrow="SOMETIMES" />
+                                                            <RowConstraints maxHeight="178.80096435546875" minHeight="10.0" prefHeight="64.4827880859375" vgrow="SOMETIMES" />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints />
+                                                            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                                                            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                                                            <RowConstraints maxHeight="0.0" minHeight="0.0" prefHeight="0.0" />
+                                                        </rowConstraints>
+                                                         <children>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" text="X" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                                               <font>
+                                                                  <Font size="15.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label text="Y" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                                               <font>
+                                                                  <Font size="15.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <Label text="Z" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3">
+                                                               <font>
+                                                                  <Font size="15.0" />
+                                                               </font>
+                                                            </Label>
+                                                            <TextField fx:id="cameraX" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                                            <TextField fx:id="cameraY" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                                                            <TextField fx:id="cameraZ" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                                                            <Button fx:id="createCameraButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleCameraCreate" prefHeight="29.0" prefWidth="112.0" text="Создать" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+                                                               <font>
+                                                                  <Font size="15.0" />
+                                                               </font>
+                                                            </Button>
+                                                            <Label alignment="CENTER" prefHeight="23.0" prefWidth="82.0" text="Камера:" GridPane.halignment="CENTER">
+                                                               <font>
+                                                                  <Font size="16.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </GridPane>
+                                                   </children>
+                                                </AnchorPane>
+                                            </content>
+                                          </ScrollPane>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </AnchorPane>
+                    </items>
+                </SplitPane>
+            </items>
+        </SplitPane>
+    </center>
+    <top>
+        <MenuBar prefWidth="644.0" BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="Файл">
+                    <items>
+                        <MenuItem fx:id="onOpenModelMenuItemClick" mnemonicParsing="false" onAction="#handleUploadModel" text="Загрузить" />
+                        <MenuItem fx:id="addModel" mnemonicParsing="false" onAction="#handleAddModel" text="Добавить" />
+                  <MenuItem fx:id="uploadTexture" mnemonicParsing="false" onAction="#handleUploadTexture" text="Загрузить текстуру" />
+                        <MenuItem fx:id="exportModel" mnemonicParsing="false" onAction="#handleExportModel" text="Экспорт" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Редактировать">
+                    <items>
+                        <MenuItem fx:id="deleteVertices" mnemonicParsing="false" onAction="#handleDeleteVertices" text="Удаление вершин/полигонов" />
+                        <MenuItem fx:id="showMesh" mnemonicParsing="false" onAction="#handleShowMesh" text="Показать полигональную сетку" />
+                        <MenuItem fx:id="useLight" mnemonicParsing="false" onAction="#handleUseLight" text="Использовать освещение" />
+                  <MenuItem fx:id="deleteTexture" mnemonicParsing="false" onAction="#handleDeleteTexture" text="Удалить текстуру" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Окно">
+                    <items>
+                        <MenuItem fx:id="interfaceMode" mnemonicParsing="false" onAction="#handleInterfaceMode" text="Темная/светлая тема" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Справка">
+                    <items>
+                        <MenuItem fx:id="info" mnemonicParsing="false" onAction="#handleInfo" text="Информация" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+</BorderPane>
