@@ -9,10 +9,10 @@ import java.util.List;
 public class ModelUtils {
     public static void triangulate(Model model) {
         // Создаем новый список треугольников
-        List<Polygon> triangulatedFaces = new ArrayList<>();
+        ArrayList<Polygon> triangulatedFaces = new ArrayList<>();
 
         for (Polygon polygon : model.getPolygons()) {
-            List<Integer> indices = polygon.getVertexIndices();
+            ArrayList<Integer> indices = polygon.getVertexIndices();
 
             // Проходим по каждой тройке вершин в полигоне
             for (int i = 0; i < indices.size() - 2; i++) {
@@ -21,7 +21,7 @@ public class ModelUtils {
                 int v3 = indices.get(i + 2);
 
                 // Создаем новый треугольник
-                List<Integer> triangleIndices = new ArrayList<>();
+                ArrayList<Integer> triangleIndices = new ArrayList<>();
                 triangleIndices.add(v1);
                 triangleIndices.add(v2);
                 triangleIndices.add(v3);

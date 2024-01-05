@@ -1,4 +1,4 @@
-module com.vsu.ru.test_1 {
+module com.vsu.ru.poroda {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.datatransfer;

@@ -1,4 +1,6 @@
 package com.vsu.ru.cg.model;
+import com.vsu.ru.cg.math.vector.Vector2f;
+import com.vsu.ru.cg.math.vector.Vector3f;
 import com.vsu.ru.cg.model.model_components.Normal;
 import com.vsu.ru.cg.model.model_components.Polygon;
 import com.vsu.ru.cg.model.model_components.TextureVertex;
@@ -7,55 +9,51 @@ import com.vsu.ru.cg.model.model_components.Vertex;
 import java.util.*;
 
 public class Model {
-    private List<Vertex> vertices;
-    private List<TextureVertex> textureVertices;
-    private List<Normal> normals;
-    private List<Polygon> polygons;
+
+    public ArrayList<Vector3f> vertices = new ArrayList<Vector3f>();
+    public ArrayList<Vector2f> textureVertices = new ArrayList<Vector2f>();
+    public ArrayList<Vector3f> normals = new ArrayList<Vector3f>();
+    public ArrayList<Polygon> polygons = new ArrayList<Polygon>();
+
+    public Model(Model model) {
+    }
 
     public Model() {
+
     }
 
-    public Model(List<Vertex> vertices, List<Polygon> polygons) {
-        this.vertices = vertices;
-        this.polygons = polygons;
+    public Model(ArrayList<Vertex> vertexList, ArrayList<TextureVertex> textureVertexList, ArrayList<Normal> normalList, ArrayList<Polygon> polygonList) {
     }
 
-    public Model(List<Vertex> vertices, List<TextureVertex> textureVertices, List<Normal> normals, List<Polygon> polygons) {
-        this.vertices = vertices;
-        this.textureVertices = textureVertices;
-        this.normals = normals;
-        this.polygons = polygons;
-    }
-
-    public List<Vertex> getVertices() {
-        return vertices;
-    }
-
-    public void setVertices(List<Vertex> vertices) {
-        this.vertices = vertices;
-    }
-
-    public List<TextureVertex> getTextureVertices() {
+    public ArrayList<Vector2f> getTextureVertices() {
         return textureVertices;
     }
 
-    public void setTextureVertices(List<TextureVertex> textureVertices) {
+    public void setTextureVertices(ArrayList<Vector2f> textureVertices) {
         this.textureVertices = textureVertices;
     }
 
-    public List<Normal> getNormals() {
+    public ArrayList<Vector3f> getNormals() {
         return normals;
     }
 
-    public void setNormals(List<Normal> normals) {
+    public void setNormals(ArrayList<Vector3f> normals) {
         this.normals = normals;
     }
 
-    public List<Polygon> getPolygons() {
-        return polygons;
+    public ArrayList<Vector3f> getVertices() {
+        return vertices;
     }
 
-    public void setPolygons(List<Polygon> polygons) {
-        this.polygons = polygons;
+    public void setVertices(ArrayList<Vector3f> vertices) {
+        this.vertices = vertices;
+    }
+
+    public void setPolygons(ArrayList<Polygon> polygons) { 
+        this.polygons = polygons; 
+    }
+    
+    public ArrayList<Polygon> getPolygons() {
+        return polygons;
     }
 }
