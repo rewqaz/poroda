@@ -2,6 +2,8 @@ package com.vsu.ru.cg.render_engine;
 import com.vsu.ru.cg.math.matrix.Matrix4f;
 import com.vsu.ru.cg.math.vector.Vector3f;
 
+import javax.vecmath.Point2f;
+
 public class GraphicConveyor {
 
     public static Matrix4f rotateScaleTranslate() {
@@ -21,10 +23,9 @@ public class GraphicConveyor {
         Vector3f resultX = new Vector3f();
         Vector3f resultY = new Vector3f();
         Vector3f resultZ = new Vector3f();
-
-        resultZ.sub(target, eye);
-        resultX.cross(up, resultZ);
-        resultY.cross(resultZ, resultX);
+        resultZ.addMul(target, eye);
+        resultX.addMul(up, resultZ);
+        resultY.addMul(resultZ, resultX);
 
         resultX.nor();
         resultY.nor();
@@ -45,19 +46,19 @@ public class GraphicConveyor {
             final float farPlane) {
         Matrix4f result = new Matrix4f();
         float tangentMinusOnDegree = (float) (1.0F / (Math.tan(fov * 0.5F)));
-        result.m00 = tangentMinusOnDegree / aspectRatio;
-        result.m11 = tangentMinusOnDegree;
-        result.m22 = (farPlane + nearPlane) / (farPlane - nearPlane);
-        result.m23 = 1.0F;
-        result.m32 = 2 * (nearPlane * farPlane) / (nearPlane - farPlane);
+        result.val[result.M11] = tangentMinusOnDegree / aspectRatio;
+        result.val[result.M22] = tangentMinusOnDegree;
+        result.val[result.M33] = (farPlane + nearPlane) / (farPlane - nearPlane);
+        result.val[result.M34] = 1.0F;
+        result.val[result.M43] = 2 * (nearPlane * farPlane) / (nearPlane - farPlane);
         return result;
     }
 
     public static Vector3f multiplyMatrix4ByVector3(final Matrix4f matrix, final Vector3f vertex) {
-        final float x = (vertex.x * matrix.m00) + (vertex.y * matrix.m10) + (vertex.z * matrix.m20) + matrix.m30;
-        final float y = (vertex.x * matrix.m01) + (vertex.y * matrix.m11) + (vertex.z * matrix.m21) + matrix.m31;
-        final float z = (vertex.x * matrix.m02) + (vertex.y * matrix.m12) + (vertex.z * matrix.m22) + matrix.m32;
-        final float w = (vertex.x * matrix.m03) + (vertex.y * matrix.m13) + (vertex.z * matrix.m23) + matrix.m33;
+        final float x = (vertex.x * matrix.val[matrix.M11]) + (vertex.y * matrix.val[matrix.M21]) + (vertex.z * matrix.val[matrix.M31]) + matrix.val[matrix.M41];
+        final float y = (vertex.x * matrix.val[matrix.M12]) + (vertex.y * matrix.val[matrix.M22]) + (vertex.z * matrix.val[matrix.M32]) + matrix.val[matrix.M42];
+        final float z = (vertex.x * matrix.val[matrix.M13]) + (vertex.y * matrix.val[matrix.M23]) + (vertex.z * matrix.val[matrix.M33]) + matrix.val[matrix.M43];
+        final float w = (vertex.x * matrix.val[matrix.M14]) + (vertex.y * matrix.val[matrix.M24]) + (vertex.z * matrix.val[matrix.M34]) + matrix.val[matrix.M44];
         return new Vector3f(x / w, y / w, z / w);
     }
 

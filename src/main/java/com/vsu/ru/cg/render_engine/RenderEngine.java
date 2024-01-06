@@ -8,6 +8,7 @@ import com.vsu.ru.cg.model.model_components.Vertex;
 import com.vsu.ru.cg.model.utils.ModelUtils;
 import javafx.scene.canvas.GraphicsContext;
 import com.vsu.ru.cg.model.Model;
+import javax.vecmath.Point2f;
 import static com.vsu.ru.cg.render_engine.GraphicConveyor.*;
 
 public class RenderEngine {
@@ -37,7 +38,7 @@ public class RenderEngine {
             for (int vertexInPolygonInd = 0; vertexInPolygonInd < nVerticesInPolygon; ++vertexInPolygonInd) {
                 Vertex vertex = mesh.getVertices().get(mesh.getPolygons().get(polygonInd).getVertexIndices().get(vertexInPolygonInd));
 
-                Vector3f vertexVecmath = new .Vector3f(vertex.getCoordinates().x, vertex.getCoordinates().y, vertex.getCoordinates().z);
+                Vector3f vertexVecmath = new Vector3f(vertex.getCoordinates().x, vertex.getCoordinates().y, vertex.getCoordinates().z);
 
                 Point2f resultPoint = vertexToPoint(multiplyMatrix4ByVector3(modelViewProjectionMatrix, vertexVecmath), width, height);
                 resultPoints.add(resultPoint);

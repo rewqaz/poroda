@@ -1,6 +1,6 @@
 package com.vsu.ru.cg.gui;
 
-import com.vsu.ru.cg.AlertProcessing;
+//import com.vsu.ru.cg.AlertProcessing;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -47,9 +47,9 @@ public class FileUtils {
             return null;
         }
 
-        if (fileInfo.content() == null) {
-            AlertProcessing.showInfoDialog("Файл пустой", "Файл, который пытаетесь открыть - пустой", "Выберите новый файл");
-        }
+//        if (fileInfo.content() == null) {
+//            AlertProcessing.showInfoDialog("Файл пустой", "Файл, который пытаетесь открыть - пустой", "Выберите новый файл");
+//        }
 
         String[] numberStrings = fileInfo.content().split("\n");
 
@@ -74,7 +74,7 @@ public class FileUtils {
             return new FileInfo(Files.readString(fileName), file.getName(), file.getAbsolutePath());
             // todo: обработка ошибок
         } catch (IOException exception){
-            AlertProcessing.showErrorDialog(exception, getClass().getSimpleName());
+//            AlertProcessing.showErrorDialog(exception, getClass().getSimpleName());
             return null;
         }
     }
